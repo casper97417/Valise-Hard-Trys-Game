@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TouchDrag : TouchSprite {
 
 	private bool Touch = false;
 	private int Direction = 0;
+
+	private int Life;
 
 	public float Position1; //Toucher initial
 	public float Position2; //Déplacement du toucher
@@ -14,6 +17,7 @@ public class TouchDrag : TouchSprite {
 
 	// Use this for initialization
 	void Start () {
+		Life = 1;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +34,14 @@ public class TouchDrag : TouchSprite {
 		if (Direction == 2) {
 			
 			this.transform.Translate (Vector3.right * (PoolObject.speed+5) * Time.deltaTime);
+		}
+
+		if (Life <= 0) {
+			if (PlayerPrefs.GetInt ("Meilleur Score") < ScoreManager.Score) {
+				PlayerPrefs.SetInt ("Meilleur Score", ScoreManager.Score);
+			}
+			PlayerPrefs.SetInt ("Score", ScoreManager.Score);
+			SceneManager.LoadScene ("GameOver");
 		}
 		
 	}
@@ -98,7 +110,7 @@ public class TouchDrag : TouchSprite {
 			Direction = 0;
 			ScoreManager.Score++;
 		}else if (col.gameObject.tag == "BacRouge" && this.gameObject.tag == "Bleu" || col.gameObject.tag == "BacBleu" && this.gameObject.tag == "Rouge" || col.gameObject.tag == "Bac")
-			LifeManager.Life--;
+			Life--;
 
 
 	}
