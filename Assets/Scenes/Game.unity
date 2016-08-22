@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createTime: 2
-  Time: 900
+  Time: 800
   ReducTime: 500
 --- !u!114 &1059394553
 MonoBehaviour:
@@ -895,7 +895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010498497336, guid: 886e91b71b1950947acd47056014de0d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.08
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 4000010498497336, guid: 886e91b71b1950947acd47056014de0d, type: 2}
       propertyPath: m_LocalPosition.z

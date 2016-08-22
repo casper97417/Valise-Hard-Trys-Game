@@ -4,7 +4,7 @@ using System.Collections;
 public class PoolObject : MonoBehaviour {
 
 	public float createTime = 2f;
-	public float Time = 950f;
+	public float Time = 800f;
 	public float ReducTime = 800f;
 	public static float speed = 1;
 
@@ -13,7 +13,7 @@ public class PoolObject : MonoBehaviour {
 
 		if (obj == null)
 			return;
-		obj.transform.position = new Vector3 (0, 0, 0);
+		obj.transform.position = new Vector3 (0, 13, 0);
 		obj.transform.rotation = transform.rotation;
 		obj.SetActive (true);
 
@@ -33,7 +33,7 @@ public class PoolObject : MonoBehaviour {
 			Invoke ("create", 0.1f);
 			//Time = Random.Range (ReducTime, 900);
 			//Time = 840 + (speed * 20.83f); //970 //125
-			Time = 960;
+			Time = 960f;
 		}
 
 		if (ReducTime < 800) {

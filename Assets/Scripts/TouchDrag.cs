@@ -69,9 +69,10 @@ public class TouchDrag : TouchSprite {
 	void OnFirstTouchBegan(){
 		Position1 = Input.GetTouch (0).deltaPosition.x;
 
-		if (PoolObject.speed <= 6) {
+		if (PoolObject.speed <= 5.8f) {
 
-			PoolObject.speed = PoolObject.speed + 1f;
+			PoolObject.speed = PoolObject.speed + .1f;
+
 		}
 
 	}

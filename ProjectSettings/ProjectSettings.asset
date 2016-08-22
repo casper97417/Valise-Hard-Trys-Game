@@ -93,7 +93,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: fr.test.casp3r
+  bundleIdentifier: fr.casp3r.test
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
